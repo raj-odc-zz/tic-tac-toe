@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Field from './Field';
+import Square from './Square';
 
 import Action from '../store/actions';
 
-const fields = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+const squares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
 class Board extends Component {
   constructor(props) {
@@ -22,14 +22,15 @@ class Board extends Component {
 
   render() {
     const { currentPlayer } = this.state;
+    const { onSquareClick } = this.props;
     return (
       <div className="Board">
         {
-          fields.map(id => (
-            <Field
-              onClick={() => {}}
-              fieldValue={currentPlayer}
-              fieldIndex={id}
+          squares.map(id => (
+            <Square
+              onClick={() => onSquareClick(id)}
+              squareValue={currentPlayer}
+              squareIndex={id}
               key={id}
             />
           ))
@@ -45,6 +46,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  onSquareClick: squareIndex => dispatch(Action.setSquareValueAndChangeActivePlayer(squareIndex)),
   createBoard: () => dispatch(Action.createBoard()),
 });
 
