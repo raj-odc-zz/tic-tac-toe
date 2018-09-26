@@ -12,14 +12,12 @@
 import { identity } from 'ramda';
 import { createStore } from 'redux';
 
+import GameStore from './reducers';
+
 /* eslint-disable-next-line no-underscore-dangle */
 const devtoolExtension = (process.env.NODE_ENV !== 'production' && window.__REDUX_DEVTOOLS_EXTENSION__) || identity;
 
-const gameReducer = (state = {}, action) => { // eslint-disable-line
-  // to be implemented
-};
-
 export default createStore(
-  gameReducer,
+  GameStore,
   devtoolExtension(),
 );

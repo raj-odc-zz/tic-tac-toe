@@ -9,14 +9,20 @@
  */
 import React from 'react';
 
-const Field = ({
-  id,
-}) => (
-  <div
-    className="Field"
-    role="presentation"
-    onClick={() => alert(`Field with id ${id} was clicked`)}
-  />
-);
+const Field = (props) => {
+  const { fieldValue, onClick, fieldIndex } = props;
+  let fieldClassName = 'Field';
+  if (fieldValue) {
+    fieldClassName += ` is-player-${fieldValue}`;
+  }
+  return (
+    <div
+      className={fieldClassName}
+      role="presentation"
+      onClick={() => onClick(fieldIndex)}
+      onKeyDown={() => {}}
+    />
+  );
+};
 
 export default Field;

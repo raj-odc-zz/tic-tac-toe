@@ -12,6 +12,7 @@ const Game = () => (
     <header>TicTacToe</header>
 
     <div className="Game">
+      <div className="Game__nextPlayer">Next Player X</div>
       <Board />
     </div>
   </div>
