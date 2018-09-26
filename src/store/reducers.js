@@ -9,8 +9,18 @@ export default function GameStore(state = {
     case 'CREATE_BOARD':
       return Object.assign({}, state, {
         board: generateBoard(),
-        activePlayer: 0,
+        activePlayer: 1,
         winner: null,
+      });
+
+    case 'SET_FIELD_VALUE':
+      return Object.assign({}, state, {
+        board: state.board.map((square, index) => {
+          if (index === action.squareIndex) {
+            return action.playerNumber;
+          }
+          return square;
+        }),
       });
 
     case 'SET_ACTIVE_PLAYER':

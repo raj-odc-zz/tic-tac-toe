@@ -10,7 +10,8 @@
  *  - resetting or starting a new game
  */
 import { identity } from 'ramda';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
 
 import GameStore from './reducers';
 
@@ -19,5 +20,8 @@ const devtoolExtension = (process.env.NODE_ENV !== 'production' && window.__REDU
 
 export default createStore(
   GameStore,
-  devtoolExtension(),
+  compose(
+    applyMiddleware(thunk),
+    devtoolExtension(),
+  ),
 );
