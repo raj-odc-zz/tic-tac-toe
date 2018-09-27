@@ -13,14 +13,20 @@ class Board extends Component {
     initiateBoard();
   }
 
+  handleClick = (id) => {
+    const { onSquareClick, winner } = this.props;
+    if (winner) return;
+    onSquareClick(id);
+  }
+
   render() {
-    const { onSquareClick, board } = this.props;
+    const { board } = this.props;
     return (
       <div className="Board">
         {
           squares.map(id => (
             <Square
-              onClick={() => onSquareClick(id)}
+              onClick={() => this.handleClick(id)}
               squareValue={board[id]}
               squareIndex={id}
               key={id}
