@@ -6,6 +6,13 @@ export function createBoard() {
   };
 }
 
+export function setPlayerName(players) {
+  return {
+    type: 'SET_PLAYER_NAME',
+    players,
+  };
+}
+
 export function setSquareValue(squareIndex, playerNumber) {
   return {
     type: 'SET_FIELD_VALUE',
@@ -21,10 +28,10 @@ export function setActivePlayer(playerNumber) {
   };
 }
 
-export function setWinner(playerNumber) {
+export function setWinner(player) {
   return {
     type: 'SET_WINNER',
-    playerNumber,
+    player,
   };
 }
 
@@ -37,8 +44,10 @@ export function updateSquareAndPlayer(squareIndex) {
     }
     dispatch(setSquareValue(squareIndex, playerNumber));
     const nextPlayerNumber = playerNumber === 1 ? 2 : 1;
-    const winner = findWinner(getState().board);
+    let winner = findWinner(getState().board);
     if (winner) {
+      const { players } = getState();
+      winner = players[winner] || 'Draw';
       dispatch(setWinner(winner));
     } else {
       dispatch(setActivePlayer(nextPlayerNumber));

@@ -1,0 +1,57 @@
+.Game {
+  display: block;
+  margin: 0 auto;
+
+  height: var(--board-size);
+  width: var(--board-size);
+}
+
+.Game > h2 {
+  text-align: center;
+}
+
+.Game__User {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.Game__User * {
+  box-sizing: border-box;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.Game__User--field {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  padding: 8px;
+  font-weight: 300;
+  letter-spacing: .09em;
+}
+
+.Game__User--field > label {
+  padding: 15px;
+}
+
+.Game__User--field input {
+  padding: 15px;
+}
+
+.Game__User--submit {
+  text-align: center;
+}
+
+.Game__User--submit button {
+  margin-left: auto;
+  padding: 8px 16px;
+  background-color: #DCDCDC;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  border-radius: 2px;
+}
+
+.displayErrors input:invalid {
+  border-color: #f73772;
+}

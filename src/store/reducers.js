@@ -4,6 +4,7 @@ export default function GameStore(state = {
   board: [],
   activePlayer: null,
   winner: null,
+  players: null,
 }, action) {
   switch (action.type) {
     case 'CREATE_BOARD':
@@ -11,6 +12,11 @@ export default function GameStore(state = {
         board: generateBoard(),
         activePlayer: 1,
         winner: null,
+      });
+
+    case 'SET_PLAYER_NAME':
+      return Object.assign({}, state, {
+        players: action.players,
       });
 
     case 'SET_FIELD_VALUE':
@@ -30,7 +36,7 @@ export default function GameStore(state = {
 
     case 'SET_WINNER':
       return Object.assign({}, state, {
-        winner: action.playerNumber,
+        winner: action.player,
       });
 
     default:
