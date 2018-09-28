@@ -29,16 +29,15 @@ class Board extends Component {
       <React.Fragment>
         {
           winner ? (
-            <React.Fragment>
-              <div className="Game__nextPlayer">
-                Winner is:
-                {winner}
+            <div className="winner__section">
+              <div className="winner__section--text">
+                { winner === 'Draw' ? 'Match Drawn' : `Player ${winner} won` }
               </div>
-              <button type="button" onClick={initiateBoard}>Play Again</button>
-            </React.Fragment>
+              <button type="button" className="winner__section--restart" onClick={initiateBoard}>Play Again</button>
+            </div>
           )
             : (
-              <div className="Game__nextPlayer">
+              <div className="winner__section">
                 Next Player:
                 {players[activePlayer]}
               </div>

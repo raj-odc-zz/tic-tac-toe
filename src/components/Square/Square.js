@@ -9,6 +9,8 @@
  */
 import React from 'react';
 
+import './Square.css';
+
 const Square = (props) => {
   const { squareValue, onClick, squareIndex } = props;
   let squareClassName = 'Field';

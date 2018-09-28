@@ -29,6 +29,8 @@
   padding: 8px;
   font-weight: 300;
   letter-spacing: .09em;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Game__User--field > label {
@@ -40,7 +42,8 @@
 }
 
 .Game__User--submit {
-  text-align: center;
+  display: flex;
+  margin: 10px;
 }
 
 .Game__User--submit button {

@@ -16,7 +16,7 @@ class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // displayErrors: false,
+      displayErrors: false,
       player1: '',
       player2: '',
     };
@@ -34,7 +34,7 @@ class Game extends Component {
     e.preventDefault();
     if (!e.target.checkValidity()) {
       this.setState({
-        // displayErrors: true,
+        displayErrors: true,
       });
     } else {
       updatePlayers({ 1: player1, 2: player2 });
@@ -52,32 +52,29 @@ class Game extends Component {
           className={displayErrors ? 'displayErrors' : ''}
         >
           <div className="Game__User--field">
-            <label htmlFor="player1">
-              First Player Name
-              <input
-                type="text"
-                key="player1"
-                name="player1"
-                placeholder="Enter player name here"
-                required
-                value={player1}
-                onChange={this.handleChange}
-              />
-            </label>
+            First Player Name
+            <input
+              type="text"
+              id="player1"
+              key="player1"
+              name="player1"
+              placeholder="Enter player name here"
+              required
+              value={player1}
+              onChange={this.handleChange}
+            />
           </div>
           <div className="Game__User--field">
-            <label htmlFor="player2">
-              Second Player Name
-              <input
-                type="text"
-                key="player2"
-                name="player2"
-                placeholder="Enter player name here"
-                required
-                value={player2}
-                onChange={this.handleChange}
-              />
-            </label>
+            Second Player Name
+            <input
+              type="text"
+              key="player2"
+              name="player2"
+              placeholder="Enter player name here"
+              required
+              value={player2}
+              onChange={this.handleChange}
+            />
           </div>
           <div className="Game__User--submit">
             <button type="submit">Submit</button>
