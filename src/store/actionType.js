@@ -1,0 +1,5 @@
+export const CREATE_BOARD = 'CREATE_BOARD';
+export const SET_PLAYER_NAME = 'SET_PLAYER_NAME';
+export const SET_SQUARE_VALUE = 'SET_SQUARE_VALUE';
+export const SET_ACTIVE_PLAYER = 'SET_ACTIVE_PLAYER';
+export const SET_WINNER = 'SET_WINNER';

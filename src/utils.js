@@ -1,6 +1,6 @@
-export function generateBoard() {
+export function generateBoard(squareLimit = 9) {
   const squares = [];
-  for (let i = 0; i < 9; i += 1) {
+  for (let i = 0; i < squareLimit; i += 1) {
     squares.push(null);
   }
   return squares;

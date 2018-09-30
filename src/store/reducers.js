@@ -1,5 +1,7 @@
 import { generateBoard } from '../utils';
 
+import * as types from './actionType';
+
 export default function GameStore(state = {
   board: [],
   activePlayer: null,
@@ -7,19 +9,19 @@ export default function GameStore(state = {
   players: null,
 }, action) {
   switch (action.type) {
-    case 'CREATE_BOARD':
+    case types.CREATE_BOARD:
       return Object.assign({}, state, {
         board: generateBoard(),
         activePlayer: 1,
         winner: null,
       });
 
-    case 'SET_PLAYER_NAME':
+    case types.SET_PLAYER_NAME:
       return Object.assign({}, state, {
         players: action.players,
       });
 
-    case 'SET_FIELD_VALUE':
+    case types.SET_SQUARE_VALUE:
       return Object.assign({}, state, {
         board: state.board.map((square, index) => {
           if (index === action.squareIndex) {
@@ -29,12 +31,12 @@ export default function GameStore(state = {
         }),
       });
 
-    case 'SET_ACTIVE_PLAYER':
+    case types.SET_ACTIVE_PLAYER:
       return Object.assign({}, state, {
         activePlayer: action.playerNumber,
       });
 
-    case 'SET_WINNER':
+    case types.SET_WINNER:
       return Object.assign({}, state, {
         winner: action.player,
       });

@@ -11,7 +11,7 @@
   margin-left: 5px;
 }
 
-.winner__section {
+.winner__section , .player__section {
   display: flex;
   flex-direction: row;
   justify-content: space-around;

@@ -37,7 +37,7 @@ class Board extends Component {
             </div>
           )
             : (
-              <div className="winner__section">
+              <div className="player__section">
                 Next Player:
                 {players[activePlayer]}
               </div>

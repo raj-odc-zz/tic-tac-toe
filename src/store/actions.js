@@ -1,21 +1,23 @@
 import { findWinner } from '../utils';
 
+import * as types from './actionType';
+
 export function createBoard() {
   return {
-    type: 'CREATE_BOARD',
+    type: types.CREATE_BOARD,
   };
 }
 
 export function setPlayerName(players) {
   return {
-    type: 'SET_PLAYER_NAME',
+    type: types.SET_PLAYER_NAME,
     players,
   };
 }
 
 export function setSquareValue(squareIndex, playerNumber) {
   return {
-    type: 'SET_FIELD_VALUE',
+    type: types.SET_SQUARE_VALUE,
     squareIndex,
     playerNumber,
   };
@@ -23,14 +25,14 @@ export function setSquareValue(squareIndex, playerNumber) {
 
 export function setActivePlayer(playerNumber) {
   return {
-    type: 'SET_ACTIVE_PLAYER',
+    type: types.SET_ACTIVE_PLAYER,
     playerNumber,
   };
 }
 
 export function setWinner(player) {
   return {
-    type: 'SET_WINNER',
+    type: types.SET_WINNER,
     player,
   };
 }
