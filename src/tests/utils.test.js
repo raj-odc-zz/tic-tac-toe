@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { generateBoard, isRowValueSame, findWinner } from '../../src/utils';
 
 describe('generateBoard function', () => {
