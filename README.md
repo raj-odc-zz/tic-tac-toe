@@ -45,6 +45,9 @@ $ npm install
 
 # start the dev server @ http://localhost:8080
 $ npm start
+
+# excute the test
+$ npm test
 ```
 
 ## Building / transpiling the project
