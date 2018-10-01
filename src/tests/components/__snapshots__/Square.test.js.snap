@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Square /> renders correctly 1`] = `
+<div
+  className="Field is-player-2"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="presentation"
+/>
+`;

@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Board /> with players renders correctly 1`] = `
+Array [
+  <div
+    className="player__section"
+  >
+    Next Player:
+    John
+  </div>,
+  <div
+    className="Board"
+  >
+    <div
+      className="Field"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="presentation"
+    />
+    <div
+      className="Field"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="presentation"
+    />
+    <div
+      className="Field"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="presentation"
+    />
+    <div
+      className="Field"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="presentation"
+    />
+    <div
+      className="Field"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="presentation"
+    />
+    <div
+      className="Field"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="presentation"
+    />
+    <div
+      className="Field"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="presentation"
+    />
+    <div
+      className="Field"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="presentation"
+    />
+    <div
+      className="Field"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="presentation"
+    />
+  </div>,
+]
+`;

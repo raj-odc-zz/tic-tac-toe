@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Game /> with initial state renders correctly with User Form 1`] = `
+<div>
+  <header>
+    TicTacToe
+  </header>
+  <div
+    className="Game"
+  >
+    <h2>
+      Enter player names
+    </h2>
+    <form
+      className=""
+      noValidate={true}
+      onSubmit={[Function]}
+    >
+      <div
+        className="Game__User--field"
+      >
+        First Player Name
+        <input
+          id="player1"
+          name="player1"
+          onChange={[Function]}
+          placeholder="Enter player name here"
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="Game__User--field"
+      >
+        Second Player Name
+        <input
+          name="player2"
+          onChange={[Function]}
+          placeholder="Enter player name here"
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="Game__User--submit"
+      >
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
