@@ -10,7 +10,8 @@
     "build": "webpack -p --progress",
     "lint": "./node_modules/.bin/eslint . --ignore-path .gitignore",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "ramda": "^0.25.0",
