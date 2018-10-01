@@ -2,7 +2,6 @@
   width: 33%;
   height: 33%;
   float: left;
-
   transform: scale(.95, .95);
   transition: background 0.2s ease;
   background: #333;

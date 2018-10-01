@@ -1,16 +1,11 @@
-/*
- * You do not need to separate components and containers.
- * Feel free to connect your state and components directly in here (or other components).
- */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// import Board from '../Board/Board';
+import Board from '../Board/Board';
 
 import './Game.css';
 
 import { createBoard, setPlayerName } from '../../store/actions';
-import Board from '../Board/Board';
 
 class Game extends Component {
   constructor(props) {
@@ -101,7 +96,6 @@ class Game extends Component {
 
 const mapStateToProps = state => ({
   activePlayer: state.activePlayer,
-  winner: state.winner,
   players: state.players,
 });
 
