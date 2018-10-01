@@ -23,14 +23,25 @@ export function findWinner(board) {
     }
   }
 
-  const winner = isRowValueSame(board[0], board[1], board[2])
-              || isRowValueSame(board[0], board[3], board[6])
-              || isRowValueSame(board[0], board[4], board[8])
-              || isRowValueSame(board[1], board[4], board[7])
-              || isRowValueSame(board[2], board[5], board[8])
-              || isRowValueSame(board[2], board[4], board[6])
-              || isRowValueSame(board[3], board[4], board[5])
-              || isRowValueSame(board[6], board[7], board[8]);
+  const winnerCombination = [
+    [0, 1, 2],
+    [0, 3, 6],
+    [0, 4, 8],
+    [1, 4, 7],
+    [2, 5, 8],
+    [2, 4, 6],
+    [3, 4, 5],
+    [6, 7, 8],
+  ];
+
+  let winner = null;
+  for (let i = 0; i < winnerCombination.length; i += 1) {
+    const [a, b, c] = winnerCombination[i];
+    winner = isRowValueSame(board[a], board[b], board[c]);
+    if (winner !== null) {
+      break;
+    }
+  }
 
   if (winner !== null) return winner;
 
