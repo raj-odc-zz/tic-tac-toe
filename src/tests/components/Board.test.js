@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
+import renderer from 'react-test-renderer';
 
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk'
@@ -19,6 +20,13 @@ describe('<Board /> with players', () => {
   };
   const mockStore = configureStore(middlewares);
   const store = mockStore(initialState);
+
+  it('renders correctly', () => {
+    const tree = renderer
+      .create(<Board store={store}/>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
   it('should load the next player as John',() => {
     wrapper = mount(<Board store={store}/>);

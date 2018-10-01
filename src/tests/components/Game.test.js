@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { shallow, mount, render } from 'enzyme';
+import renderer from 'react-test-renderer';
 
 import configureStore from 'redux-mock-store';
 
@@ -35,6 +36,13 @@ describe('<Game /> with initial state', () => {
   it('should render to static HTML', function() {
     expect(render(<Game store={store}/>).text())
     .toEqual('TicTacToeEnter player namesFirst Player NameSecond Player NameSubmit');
+  });
+
+  it('renders correctly with User Form', () => {
+    const tree = renderer
+      .create(<Game store={store}/>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
 
